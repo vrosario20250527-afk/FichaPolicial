@@ -1,0 +1,40 @@
+@FichaPolicial_HostAddress = http://localhost:5071
+
+### 1. Obtener todas las fichas
+GET {{FichaPolicial_HostAddress}}/api/FichasPoliciales
+Accept: application/json
+
+### 2. Obtener una ficha por ID
+GET {{FichaPolicial_HostAddress}}/api/FichasPoliciales/1
+Accept: application/json
+
+### 3. Crear una nueva ficha
+POST {{FichaPolicial_HostAddress}}/api/FichasPoliciales
+Content-Type: application/json
+
+{
+  "numeroExpediente": "EXP-2026-004",
+  "nombreCompleto": "Pedro Ramirez",
+  "documentoIdentidad": "402-9988776-1",
+  "edad": 31,
+  "delitoImputado": "Porte ilegal de armas",
+  "peligrosidad": 1,
+  "estado": "Detenido"
+}
+
+### 4. Actualizar una ficha existente
+PUT {{FichaPolicial_HostAddress}}/api/FichasPoliciales/1
+Content-Type: application/json
+
+{
+  "numeroExpediente": "EXP-2026-001",
+  "nombreCompleto": "Carlos Mendoza Actualizado",
+  "documentoIdentidad": "402-1234567-8",
+  "edad": 35,
+  "delitoImputado": "Robo agravado",
+  "peligrosidad": 2,
+  "estado": "Sentenciado"
+}
+
+### 5. Eliminar una ficha
+DELETE {{FichaPolicial_HostAddress}}/api/FichasPoliciales/1
